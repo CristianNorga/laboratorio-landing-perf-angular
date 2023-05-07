@@ -2,15 +2,21 @@
   <div class="flex--vertical">
     <div class="flex_child--vertical flex--horizontal summary__lists">
       <div class="summary__list flex--horizontal fadeIn">
-        <img alt="github" src="assets/images/summary-github.png"  />
+        <div class="ctn-img">
+          <img alt="github" [ngSrc]="'assets/images/summary-github.png'"  fill/>
+        </div>
         <p>works on phone and all devices</p>
       </div>
       <div class="summary__list flex--horizontal fadeIn">
-        <img alt="cpu" src="assets/images/summary-cpu.png"  />
+        <div class="ctn-img">
+          <img alt="cpu" [ngSrc]="'assets/images/summary-cpu.png'"  fill/>
+        </div>
         <p>free status page for monitoring</p>
       </div>
       <div class="summary__list flex--horizontal fadeIn">
-        <img alt="dollar" src="assets/images/summary-dollar.png"  />
+        <div class="ctn-img">
+          <img alt="dollar" [ngSrc]="'assets/images/summary-dollar.png'"  fill/>
+        </div>
         <p>easy integrations and setup</p>
       </div>
     </div>

@@ -43,6 +43,7 @@
     }
   }
   .flex_child--horizontal {
+    position: relative;
     &:first-of-type {
       flex: 1.2;
       flex-direction: column;

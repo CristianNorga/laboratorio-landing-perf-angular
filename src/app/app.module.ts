@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgChartsModule } from 'ng2-charts';
 import { SwiperModule } from 'swiper/angular';
+import { provideClientHydration } from '@angular/platform-browser';
+import { NgOptimizedImage } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import { CustomersComponent } from './components/customers/customers.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,7 @@ import { HomeComponent } from './pages/home/home.component';
     IntegrationsComponent,
     CustomersComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,8 +40,13 @@ import { HomeComponent } from './pages/home/home.component';
     NgChartsModule,
     FontAwesomeModule,
     SwiperModule,
+    NgOptimizedImage
   ],
-  providers: [],
+  providers: [
+    provideClientHydration(),
+    { provide: 'appId', useValue: 'serverApp' },
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
