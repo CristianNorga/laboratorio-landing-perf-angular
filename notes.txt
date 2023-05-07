@@ -1,0 +1,16 @@
+#paquetes relacionado a la imagenes
+imagemin (comprimir)
+imagemin-pngquant (comprimir png)
+imagemin-webp (generar)
+sharp (generar diferentes dimensiones)
+
+#tareas a ejecutar "tambien podemos unirlo al webpack"
+"images": "npm run images:resize && npm run images:compress"
+"images:resize": "node scripts/resize.mjs"
+"images:compress": "node scripts/compress.mjs"
+
+#scripts
+
+  compress
+  
+

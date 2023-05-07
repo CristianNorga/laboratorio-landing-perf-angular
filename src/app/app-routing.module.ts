@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
-import { HomeComponent } from './pages/home/home.component';
+// import module
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
+    initialNavigation: 'enabledBlocking',
+    preloadingStrategy: PreloadAllModules
 })],
   exports: [RouterModule]
 })
